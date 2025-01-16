@@ -1,7 +1,7 @@
 // import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Code, Wrench } from 'lucide-react';
-import profileimage from './assets/images/profile3.jpg';
+// import profileimage from './assets/images/profile3.jpg';
 
 const About = () => {
   return (
@@ -14,7 +14,7 @@ const About = () => {
       >
         <div className="text-center mb-12">
           <img
-            src={profileimage}
+            src="/assets/images/profile3.jpg"
             alt="Profile"
             className="w-48 h-48 rounded-full mx-auto mb-6 object-cover"
           />
