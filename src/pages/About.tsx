@@ -1,7 +1,7 @@
 // import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Code, Wrench } from 'lucide-react';
-import profileimage from 'D:\\web projects\\Portfolio2\\asset\\images\\profile3.jpg';
+import profileImage from './assets/images/profile3.jpg';
 
 const About = () => {
   return (
