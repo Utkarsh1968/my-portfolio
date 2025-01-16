@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ExternalLink, Code, Database, Trophy } from 'lucide-react';
-import profileimage from './assets/images/profile3.jpg';
+// import profileimage from './assets/images/profile3.jpg';
 
 const featuredProjects = [
   {
@@ -61,7 +61,7 @@ const Home = () => {
             className="w-64 h-64 rounded-full overflow-hidden ring-4 ring-purple-400 shadow-2xl"
           >
             <img
-              src= {profileimage} // Update the path if needed
+              src= "/assets/images/profile3.jpg" // Update the path if needed
               alt="Profile"
               className="w-full h-full object-cover"
             />
