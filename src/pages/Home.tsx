@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ExternalLink, Code, Database, Trophy } from 'lucide-react';
-import profileimage from 'D:\\web projects\\Portfolio2\\asset\\images\\profile3.jpg';
+import profileimage from './assets/images/profile3.jpg';
 
 const featuredProjects = [
   {
