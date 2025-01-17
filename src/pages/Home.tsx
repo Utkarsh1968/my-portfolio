@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, ExternalLink, Code, Database, Trophy } from 'lucide-react';
 // import profileimage from './assets/images/profile3.jpg';
+import { useNavigate } from 'react-router-dom';
 
 const featuredProjects = [
   {
@@ -10,14 +11,16 @@ const featuredProjects = [
     tech: ["IIT Roorkee", "Machine Learning", "Python"],
     link: "https://hyperstack.id/credential/ea9d5d57-444a-4ffe-a199-dd0805a89642",
     linkname: "Certificate",
+    isExternal: true,
   },
   {
     icon: <Code className="w-12 h-12 text-purple-400" />,
     title: "ML Projects",
     description: "Creating innovative machine learning projects to solve real-world problems using predictive analytics, NLP, and deep learning.",
     tech: ["PyTorch", "BERT", "FastAPI"],
-    link: "#Projects.tsk",
+    link: "/projects",
     linkname: "Learn More",
+    isExternal: false,
   },
   {
     icon: <Database className="w-12 h-12 text-purple-400" />,
@@ -30,11 +33,21 @@ const featuredProjects = [
 ];
 
 const Home = () => {
+
+  const navigate = useNavigate();
   const scrollToContent = () => {
     window.scrollTo({
       top: window.innerHeight,
       behavior: 'smooth',
     });
+  };
+
+  const handleProjectClick = (link: string, isExternal: boolean) => {
+    if (isExternal) {
+      window.open(link, '_blank');
+    } else {
+      navigate(link);
+    }
   };
 
   return (
@@ -158,7 +171,7 @@ const Home = () => {
           >
             <h2 className="text-4xl font-bold text-white mb-4">Featured Work</h2>
             <p className="text-gray-300 text-lg">
-              Explore some of my recent projects in AI and machine learning
+              Explore some of my recent projects and work in AI and machine learning field
             </p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -184,15 +197,13 @@ const Home = () => {
                     </span>
                   ))}
                 </div>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => project.link && handleProjectClick(project.link, project.isExternal)}
                   className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors"
                 >
                   {project.linkname}
                   <ExternalLink className="w-4 h-4 ml-2" />
-                </a>
+                </button>
               </motion.div>
             ))}
           </div>
