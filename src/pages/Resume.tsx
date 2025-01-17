@@ -57,7 +57,7 @@ const Resume = () => {
                 <h4 className="text-xl font-semibold text-white">Artificial Intelligence intern</h4>
                 <p className="text-purple-400">Corizo. • April2023 - June2023</p>
                 <ul className="mt-4 text-gray-300 space-y-2 list-disc list-inside">
-                  <li>Go through a training on AI and Ml for one month</li>
+                  <li>Gone through a training on AI and Ml for one month</li>
                   <li>Built a spotify clone for music recommendation</li>
                   
                 </ul>
