@@ -16,7 +16,7 @@ const featuredProjects = [
     title: "ML Projects",
     description: "Creating innovative machine learning projects to solve real-world problems using predictive analytics, NLP, and deep learning.",
     tech: ["PyTorch", "BERT", "FastAPI"],
-    link: "#projects",
+    link: "#Projects",
     linkname: "Learn More",
   },
   {
