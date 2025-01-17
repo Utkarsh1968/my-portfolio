@@ -149,7 +149,7 @@ const Resume = () => {
                 <div>
                   <ul className="text-gray-300 space-y-2 list-disc list-inside">
                     <li>Fundamentals of Deep Learning(NVIDIA)</li>
-                    <li>Deep Learning for Developers(Infosis Springboot)</li>
+                    <li>Deep Learning for Developers(Infosys Springboot)</li>
                     <li>Python for Data Science, AI & Development(IBM)</li>
                   </ul>
                 </div>
