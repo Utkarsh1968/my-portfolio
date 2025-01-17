@@ -57,10 +57,15 @@ const Contact = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="space-y-6"
           >
-            <div className="flex items-center space-x-4 text-gray-300">
+            <a
+              href="mailto:ucinovation2004@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-4 text-gray-300"
+            >
               <Mail className="w-6 h-6 text-purple-400" />
               <span>Ucinovation2004@gmail.com</span>
-            </div>
+            </a>
             <a
               href="https://www.linkedin.com/in/utkarsh-chauhan-648194248/"
               target="_blank"
