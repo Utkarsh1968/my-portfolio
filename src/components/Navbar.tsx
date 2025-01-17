@@ -1,8 +1,14 @@
-// import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Brain, User, Briefcase, FileText, Mail } from 'lucide-react';
+import { Brain, User, Briefcase, FileText, Mail, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-black/30 backdrop-blur-sm z-50">
       <div className="max-w-7xl mx-auto px-4">
@@ -12,7 +18,16 @@ const Navbar = () => {
             <span className="text-white font-bold text-xl">ML Engineer</span>
           </NavLink>
           
-          <div className="flex space-x-8">
+          {/* Mobile menu button */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden text-gray-300 hover:text-white"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+
+          {/* Desktop navigation */}
+          <div className="hidden md:flex space-x-8">
             <NavLink to="/about" className={({ isActive }) => 
               `flex items-center space-x-1 text-sm font-medium transition-colors ${
                 isActive ? 'text-purple-400' : 'text-gray-300 hover:text-white'
@@ -46,6 +61,66 @@ const Navbar = () => {
             </NavLink>
           </div>
         </div>
+
+        {/* Mobile navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-900/90 rounded-lg mt-2">
+              <NavLink
+                to="/about"
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded-md text-base font-medium ${
+                    isActive
+                      ? 'text-purple-400 bg-gray-800/50'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-800/30'
+                  }`
+                }
+              >
+                About
+              </NavLink>
+              <NavLink
+                to="/projects"
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded-md text-base font-medium ${
+                    isActive
+                      ? 'text-purple-400 bg-gray-800/50'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-800/30'
+                  }`
+                }
+              >
+                Projects
+              </NavLink>
+              <NavLink
+                to="/resume"
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded-md text-base font-medium ${
+                    isActive
+                      ? 'text-purple-400 bg-gray-800/50'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-800/30'
+                  }`
+                }
+              >
+                Resume
+              </NavLink>
+              <NavLink
+                to="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className={({ isActive }) =>
+                  `block px-3 py-2 rounded-md text-base font-medium ${
+                    isActive
+                      ? 'text-purple-400 bg-gray-800/50'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-800/30'
+                  }`
+                }
+              >
+                Contact
+              </NavLink>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
